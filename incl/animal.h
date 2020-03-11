@@ -5,22 +5,16 @@ typedef struct AnimalVtb {
     void (*say)(void *self);
 } AnimalVtb;
 
-typedef struct Animal
-{
-    AnimalVtb *vptr;
-    char *type;
-    char *name;
-    int age;
-} Animal;
+typedef struct _Animal *Animal;
 
-void animalInit(Animal *self, AnimalVtb *vptr ,char* type, char* name, int age);
+void animalInit(Animal self, AnimalVtb *vptr ,char* type, char* name, int age);
 
-void animalSay(Animal *self);
+void animalSay(Animal self);
 
-char* animalGetName(Animal *self);
+char* animalGetName(Animal self);
 
-int animalGetAge(Animal *self);
+int animalGetAge(Animal self);
 
-char* animalGetType(Animal *self);
+char* animalGetType(Animal self);
 
 #endif

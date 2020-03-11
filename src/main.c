@@ -6,14 +6,14 @@
 
 int main(void)
 {
-    Animal *animal;
+    Animal animal;
 
-    Dog *dog = dogCreate("doge", 10);
-    animal = (Animal*)dog;
+    Dog dog = dogCreate("doge", 10);
+    animal = (Animal)dog;
     animalSay(animal);
 
-    Human *human = humanCreate("ZhangSan", 25, 111);
-    animal = (Animal *)human;
+    Human human = humanCreate("ZhangSan", 25, 111);
+    animal = (Animal)human;
     animalSay(animal);
 
     return 0;

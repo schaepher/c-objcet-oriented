@@ -3,15 +3,12 @@
 
 #include "animal.h"
 
-typedef struct Dog
-{
-    Animal animal;
-} Dog;
+typedef struct _Dog *Dog;
 
-Dog *dogCreate(char *name, int age);
+Dog dogCreate(char *name, int age);
 
-char *dogGetName(Dog *dog);
-int dogGetAge(Dog *dog);
+char *dogGetName(Dog dog);
+int dogGetAge(Dog dog);
 void dogSay(void *dog);
 
 #endif

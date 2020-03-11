@@ -9,20 +9,25 @@ void dogSay(void *dog)
 
 AnimalVtb dogVtb = {dogSay};
 
-Dog *dogCreate(char *name, int age)
+struct _Dog
 {
-    struct Dog *dog;
-    dog = (Dog *)malloc(sizeof(struct Dog));
-    animalInit((Animal *)dog, &dogVtb, "dog", name, age);
+    Animal animal;
+};
+
+Dog dogCreate(char *name, int age)
+{
+    Dog dog;
+    dog = (Dog)malloc(sizeof(Dog));
+    animalInit((Animal)dog, &dogVtb, "dog", name, age);
     return dog;
 }
 
-char *dogGetName(Dog *dog)
+char *dogGetName(Dog dog)
 {
-    return animalGetName((Animal *)dog);
+    return animalGetName((Animal)dog);
 }
 
-int dogGetAge(Dog *dog)
+int dogGetAge(Dog dog)
 {
-    return animalGetAge((Animal *)dog);
+    return animalGetAge((Animal)dog);
 }
