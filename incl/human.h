@@ -7,9 +7,9 @@ typedef struct _Human *Human;
 
 Human humanCreate(char *name, int age, int id);
 
-char *humanGetName(Human human);
-int humanGetAge(Human human);
-int humanGetId(Human human);
-void humanSay(void *human);
+char *humanGetName(Human this);
+int humanGetAge(Human this);
+int humanGetId(Human this);
+void humanSay(void *this);
 
 #endif

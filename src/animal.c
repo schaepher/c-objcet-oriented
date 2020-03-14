@@ -8,30 +8,30 @@ struct _Animal
     int age;
 };
 
-void animalInit(Animal self, AnimalVtb *vptr, char *type, char *name, int age)
+void animalInit(Animal this, AnimalVtb *vptr, char *type, char *name, int age)
 {
-    self->vptr = vptr;
-    self->type = type;
-    self->name = name;
-    self->age = age;
+    this->vptr = vptr;
+    this->type = type;
+    this->name = name;
+    this->age = age;
 }
 
-void animalSay(Animal self)
+void animalSay(Animal this)
 {
-    (*self->vptr->say)(self);
+    (*this->vptr->say)(this);
 }
 
-char *animalGetName(Animal self)
+char *animalGetName(Animal this)
 {
-    return self->name;
+    return this->name;
 }
 
-int animalGetAge(Animal self)
+int animalGetAge(Animal this)
 {
-    return self->age;
+    return this->age;
 }
 
-char *animalGetType(Animal self)
+char *animalGetType(Animal this)
 {
-    return self->type;
+    return this->type;
 }

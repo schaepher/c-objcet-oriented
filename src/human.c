@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-void humanSay(void *human)
+void humanSay(void *this)
 {
-    Human self = (Human)human;
-    printf("Hi, my name is %s, and my ID is %d!\n", humanGetName(self), humanGetId(self));
+    Human human = (Human)this;
+    printf("Hi, my name is %s, and my ID is %d!\n", humanGetName(human), humanGetId(human));
 }
 
 AnimalVtb humanVtb = {humanSay};
@@ -18,24 +18,24 @@ struct _Human
 
 Human humanCreate(char *name, int age, int id)
 {
-    Human human;
-    human = (Human)malloc(sizeof(Human));
-    animalInit((Animal)human, &humanVtb, "human", name, age);
-    human->id = id;
-    return human;
+    Human this;
+    this = (Human)malloc(sizeof(Human));
+    animalInit((Animal)this, &humanVtb, "human", name, age);
+    this->id = id;
+    return this;
 }
 
-char *humanGetName(Human human)
+char *humanGetName(Human this)
 {
-    return animalGetName((Animal)human);
+    return animalGetName((Animal)this);
 }
 
-int humanGetAge(Human human)
+int humanGetAge(Human this)
 {
-    return animalGetAge((Animal)human);
+    return animalGetAge((Animal)this);
 }
 
-int humanGetId(Human human)
+int humanGetId(Human this)
 {
-    return human->id;
+    return this->id;
 }

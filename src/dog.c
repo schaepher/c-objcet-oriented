@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void dogSay(void *dog)
+void dogSay(void *this)
 {
     printf("Wang Wang Wang!\n");
 }
@@ -16,18 +16,18 @@ struct _Dog
 
 Dog dogCreate(char *name, int age)
 {
-    Dog dog;
-    dog = (Dog)malloc(sizeof(Dog));
-    animalInit((Animal)dog, &dogVtb, "dog", name, age);
-    return dog;
+    Dog this;
+    this = (Dog)malloc(sizeof(Dog));
+    animalInit((Animal)this, &dogVtb, "dog", name, age);
+    return this;
 }
 
-char *dogGetName(Dog dog)
+char *dogGetName(Dog this)
 {
-    return animalGetName((Animal)dog);
+    return animalGetName((Animal)this);
 }
 
-int dogGetAge(Dog dog)
+int dogGetAge(Dog this)
 {
-    return animalGetAge((Animal)dog);
+    return animalGetAge((Animal)this);
 }

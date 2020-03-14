@@ -2,19 +2,19 @@
 #define __OBJ_ANIMAL__
 
 typedef struct AnimalVtb {
-    void (*say)(void *self);
+    void (*say)(void *this);
 } AnimalVtb;
 
 typedef struct _Animal *Animal;
 
-void animalInit(Animal self, AnimalVtb *vptr ,char* type, char* name, int age);
+void animalInit(Animal this, AnimalVtb *vptr ,char* type, char* name, int age);
 
-void animalSay(Animal self);
+void animalSay(Animal this);
 
-char* animalGetName(Animal self);
+char* animalGetName(Animal this);
 
-int animalGetAge(Animal self);
+int animalGetAge(Animal this);
 
-char* animalGetType(Animal self);
+char* animalGetType(Animal this);
 
 #endif

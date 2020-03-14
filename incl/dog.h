@@ -7,8 +7,8 @@ typedef struct _Dog *Dog;
 
 Dog dogCreate(char *name, int age);
 
-char *dogGetName(Dog dog);
-int dogGetAge(Dog dog);
-void dogSay(void *dog);
+char *dogGetName(Dog this);
+int dogGetAge(Dog this);
+void dogSay(void *this);
 
 #endif
